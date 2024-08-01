@@ -1,0 +1,40 @@
+---
+title: "Backup and Restore Additional Moodle Plugin"
+description: "If moodle is installed using git, you don't have to use this plugin"
+date: "2024-08-02"
+tags: ["git", "workflow"]
+cover: "https://github.com/khairu-aqsara/moodle_contribonly_plugin_backup/raw/main/moodle_plugin_backup.png"
+---
+
+Upgrading a Moodle site has never been an easy task. According to Moodle's standard upgrading guide, we cannot simply overwrite old files with new ones. This means we need to relocate all installed additional plugins to the directory of the new Moodle version. To facilitate this process, <Notation type="highlight" color="green">we can use a plugin designed specifically for backing up and restoring additional (contributed) plugins installed on Moodle</Notation>, which eliminates the need for manual relocation during the upgrade process. Once we have moved the additional plugins to their original folder, we can allow Moodle to handle the upgrades for those plugins as needed.
+
+# How to use
+### Backup
+<Notation type="underline" color="red">Ensure you are in the root directory of the installed Moodle</Notation>. This process will copy the additional plugin to the specified folder, along with their metadata in JSON format for restoration purposes.
+```bash
+wget https://raw.githubusercontent.com/khairu-aqsara/moodle_contribonly_plugin_backup/main/plugin_backups.php
+chmod +x plugin_backups.php
+sudo -u www-data php plugin_backups.php --destination=/var/www/html --folder=plugin_backup --mode=backup
+```
+
+### Restore
+<Notation type="underline" color="red">Ensure that you are in the root directory of the newly installed version of Moodle</Notation> before beginning the upgrade process. This process will transfer the additional plugins from the specified folder to the new Moodle installation directory, based on the plugin metadata root directory.
+
+```bash
+wget https://raw.githubusercontent.com/khairu-aqsara/moodle_contribonly_plugin_backup/main/plugin_backups.php
+chmod +x plugin_backups.php
+sudo -u www-data php plugin_backups.php --destination=/var/www/html --folder=plugin_backup --mode=restore
+```
+
+That command will generate a new JSON file similar to the one shown below.
+
+```json
+{
+  "type":"assignfeedback",
+  "name":"structured",
+  "typerootdir":"/var/www/html/moodle/mod/assign/feedback",
+  "rootdir":"/var/www/html/moodle/mod/assign/feedback/structured",
+  "displayname":"Structured feedback",
+  "versiondisk":2019061100
+}
+```

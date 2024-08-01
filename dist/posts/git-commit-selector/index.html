@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en" class="text-zinc-800"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/png" href="/favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=PT+Mono&display=swap" rel="stylesheet"><!-- Canonical URL --><link rel="canonical" href="https://coretan.khairu-aqsara.cloud/posts/git-commit-selector"><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><!-- Primary Meta Tags --><title>Git Commit Selector · KHAIRU</title><meta name="title" content="Git Commit Selector · KHAIRU"><meta name="description" content="The Git Commit Selector is a bash script designed to simplify the process of finding and checking out to specific release commits in a Git repository."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://coretan.khairu-aqsara.cloud/posts/git-commit-selector"><meta property="og:title" content="Git Commit Selector · KHAIRU"><meta property="og:description" content="The Git Commit Selector is a bash script designed to simplify the process of finding and checking out to specific release commits in a Git repository."><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://coretan.khairu-aqsara.cloud/posts/git-commit-selector"><meta property="twitter:title" content="Git Commit Selector · KHAIRU"><meta property="twitter:description" content="The Git Commit Selector is a bash script designed to simplify the process of finding and checking out to specific release commits in a Git repository."><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><link rel="stylesheet" href="/_astro/_slug_.BD4GzjIT.css">
+<link rel="stylesheet" href="/_astro/_slug_.BQZdeNRP.css"><script type="module" src="/_astro/hoisted.UvcfpOZg.js"></script>
+<script type="module" src="/_astro/page.Q-kNTEwv.js"></script></head> <body> <div class="flex flex-col h-full mb-8 overflow-y-scroll antialiased"> <header class="sticky z-50 top-0 bg-white/80 backdrop-blur-xl transition-all select-none bg-gradient-to-b from-orange-50"> <div class="flex flex-row gap-8 items-center justify-between max-w-screen-md mx-auto h-24 px-4 sm:px-6"> <a href="/" class="flex flex-row items-center justify-center gap-2"> <img src="/avatar.jpg" alt="author avatar" class="w-10 rounded-full aspect-square"> <span class="font-title font-black">KHAIRU</span> </a> <div class="flex flex-row gap-4"> <a href="/posts" target="_self" class="h-full text-sm hover:text-orange-700"> Post </a><a href="/tags" target="_self" class="h-full text-sm hover:text-orange-700"> Tags </a><a href="/date" target="_self" class="h-full text-sm hover:text-orange-700"> Archive </a><a href="https://github.com/khairu-aqsara" target="_blank" class="h-full text-sm hover:text-orange-700"> GitHub </a> </div> </div> </header> <div class="flex-auto">  <div class="flex flex-col gap-8 md:w-5/6 px-4 py-12 sm:px-8 mx-auto"> <div class="flex flex-col gap-6 items-center justify-center max-w-screen-sm mx-auto"> <h1 id="header" class="text-5xl text-center font-title font-black">Git Commit Selector</h1> <div class="flex items-center justify-center gap-2"> <a href="/date/2024" target="_self" class="px-2.5 py-1 rounded-lg text-xs bg-zinc-50"> August 3, 2024 </a> <a href="/tags/git" target="_self" class="px-2.5 py-1 rounded-lg text-xs text-red-600 font-medium bg-red-50/80 capitalize"> git </a><a href="/tags/workflow" target="_self" class="px-2.5 py-1 rounded-lg text-xs text-red-600 font-medium bg-red-50/80 capitalize"> workflow </a> </div> <p class="text-lg text-center text-zinc-700 max-w-[480px]">The Git Commit Selector is a bash script designed to simplify the process of finding and checking out to specific release commits in a Git repository.</p> </div> <img src="https://github.com/khairu-aqsara/git-cs/raw/main/case.jpg?w=1200&q=80" alt="cover" class="w-full max-w-screen-md mx-auto rounded-lg"> </div> <div class="relative flex flex-col gap-2 max-w-screen-md mx-auto px-4 sm:px-6 text-base text-zinc-700"> <h1 id="why" class="text-4xl font-bold my-2"> Why </h1>
+<p> In large software projects, managing releases and finding specific release commits can be challenging. Me specially often need to switch between different release versions for debugging, testing, or deployment purposes. Manually searching through Git logs to find the exact commit for a specific release can be time-consuming and error-prone. </p>
+<p> This script was created to solve these problems by: </p>
+<ol class="list-decimal ml-6"> 
+<li class="mb-1"> Automating the process of finding release commits. </li>
+<li class="mb-1"> Providing an interactive way to select and checkout to specific release commits. </li>
+<li class="mb-1"> Streamlining the workflow for developers working with multiple releases. </li>
+ </ol>
+<p> The Git Commit Selector is a bash script designed to simplify the process of finding and checking out to specific release commits in a Git repository. It addresses common challenges faced by developers when working with multiple releases. </p>
+<h2 id="key-features" class="text-2xl font-bold my-2"> Key Features </h2>
+<ul class="list-disc ml-6"> 
+<li class="mb-1"> <span data-notion-identity="notion" data-notion-type="highlight" data-notion-color="yellow" data-notion-strokewidth="1.5"> Automated Release Search: </span> Quickly finds all commits related to a specific release version. </li>
+<li class="mb-1"> <span data-notion-identity="notion" data-notion-type="highlight" data-notion-color="yellow" data-notion-strokewidth="1.5"> Interactive Selection: </span> Presents a list of matching commits and allows the user to select one interactively. </li>
+<li class="mb-1"> <span data-notion-identity="notion" data-notion-type="highlight" data-notion-color="yellow" data-notion-strokewidth="1.5"> Automatic Checkout: </span> Checks out to the selected commit, saving time and reducing errors. </li>
+<li class="mb-1"> <span data-notion-identity="notion" data-notion-type="highlight" data-notion-color="yellow" data-notion-strokewidth="1.5"> Branch Switching: </span> Automatically switches to the specified branch before searching for commits. </li>
+<li class="mb-1"> <span data-notion-identity="notion" data-notion-type="highlight" data-notion-color="yellow" data-notion-strokewidth="1.5"> Error Handling: </span> Robust error checking ensures the script fails gracefully with informative messages. </li>
+<li class="mb-1"> <span data-notion-identity="notion" data-notion-type="highlight" data-notion-color="yellow" data-notion-strokewidth="1.5"> User-Friendly Interface: </span> Clear prompts and a simple banner make the script easy to use. </li>
+ </ul>
+<h3 id="how-it-works" class="text-xl font-bold my-2"> How It Works: </h3>
+<ol class="list-decimal ml-6"> 
+<li class="mb-1"> The script first checks if it’s run in a Git repository and if the correct number of arguments is provided. </li>
+<li class="mb-1"> It then switches to the specified branch if necessary. </li>
+<li class="mb-1"> Using Git log commands, it searches for commits containing the specified release version. </li>
+<li class="mb-1"> The filtered commits are presented to the user in a numbered list. </li>
+<li class="mb-1"> The user can then select a commit number or choose to exit. </li>
+<li class="mb-1"> If a commit is selected, the script automatically checks out to that commit. </li>
+ </ol>
+<p> This tool is particularly useful for teams working on projects with numerous releases, helping to maintain efficiency and reduce the likelihood of errors when navigating between different versions of the codebase. </p>
+<h1 id="installation-on-wsl--linux-based-system" class="text-4xl font-bold my-2"> Installation on WSL / Linux Based System </h1>
+<h3 id="prerequisites" class="text-xl font-bold my-2"> Prerequisites: </h3>
+<ul class="list-disc ml-6"> 
+<li class="mb-1"> Bash shell </li>
+<li class="mb-1"> Git installed and configured </li>
+ </ul>
+<h3 id="easy-install" class="text-xl font-bold my-2"> Easy Install </h3>
+<p> Simply download the Bash version of this and execute the following command. </p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e;overflow-x:auto" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1">sudo</span><span style="color:#032F62"> chmod</span><span style="color:#032F62"> +x</span><span style="color:#032F62"> gitcs</span></span>
+<span class="line"><span style="color:#6F42C1">sudo</span><span style="color:#032F62"> mv</span><span style="color:#032F62"> gitcs</span><span style="color:#032F62"> /usr/local/bin/gitcs</span></span>
+<span class="line"></span></code></pre>
+<h3 id="installation-using-the-installer-script" class="text-xl font-bold my-2"> Installation Using the Installer Script: </h3>
+<h4 id="download-the-installer-script" class="text-base font-bold my-2"> Download the Installer Script </h4>
+<p> Download the <code>install.sh</code> script from the repository or directly create it using any text editor. </p>
+<h4 id="run-the-installer-script" class="text-base font-bold my-2"> Run the Installer Script </h4>
+<p> Open your terminal and navigate to the directory where you saved the <code>install.sh</code> script. Run the script: </p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e;overflow-x:auto" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1">chmod</span><span style="color:#032F62"> +x</span><span style="color:#032F62"> install.sh</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">./install.sh</span><span style="color:#24292E">  </span></span>
+<span class="line"></span></code></pre>
+<p> The script will: </p>
+<ul class="list-disc ml-6"> 
+<li class="mb-1"> Clone the repository. </li>
+<li class="mb-1"> Make the main script executable. </li>
+<li class="mb-1"> Optionally add the script directory to your PATH. </li>
+ </ul>
+<h4 id="verify-installation" class="text-base font-bold my-2"> Verify Installation </h4>
+<p> After installation, you can use the script directly by calling: </p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e;overflow-x:auto" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1">gitcs</span></span>
+<span class="line"><span style="color:#6A737D">#or</span></span>
+<span class="line"><span style="color:#6F42C1">gitcs</span><span style="color:#D73A49"> &lt;</span><span style="color:#032F62">branch_nam</span><span style="color:#24292E">e</span><span style="color:#D73A49">&gt;</span><span style="color:#D73A49"> &lt;</span><span style="color:#032F62">release_versio</span><span style="color:#24292E">n</span><span style="color:#D73A49">&gt;</span></span>
+<span class="line"></span></code></pre>
+<h2 id="installation-on-windows-system" class="text-2xl font-bold my-2"> Installation on Windows System </h2>
+<p> Go to the Releases page of this repository and download the latest Windows executable <code>gitcs.exe</code>. then Move the downloaded gitcs.exe to a directory of your choice, e.g., <code>C:\Tools\gitcs</code> and Add the directory containing <code>gitcs.exe</code> to your system’s PATH environment variable: </p>
+<ul class="list-disc ml-6"> 
+<li class="mb-1"> Right-click on ‘This PC’ or ‘Computer’ on your desktop or in File Explorer. </li>
+<li class="mb-1"> Click on ‘Properties’. </li>
+<li class="mb-1"> Click on ‘Advanced system settings’. </li>
+<li class="mb-1"> Click on the ‘Environment Variables’ button. </li>
+<li class="mb-1"> In the ‘System variables’ section, find the Path variable and click ‘Edit’. </li>
+<li class="mb-1"> Add the path to the directory where you placed gitcs.exe (e.g., <code>C:\Tools\gitcs</code>). </li>
+<li class="mb-1"> Click ‘OK’ to close all dialogs. </li>
+ </ul>
+<p> Open Command Prompt and type: </p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e;overflow-x:auto" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1">gitcs</span></span>
+<span class="line"><span style="color:#6A737D">#or</span></span>
+<span class="line"><span style="color:#6F42C1">gitcs</span><span style="color:#D73A49"> &lt;</span><span style="color:#032F62">branch_nam</span><span style="color:#24292E">e</span><span style="color:#D73A49">&gt;</span><span style="color:#D73A49"> &lt;</span><span style="color:#032F62">release_versio</span><span style="color:#24292E">n</span><span style="color:#D73A49">&gt;</span></span>
+<span class="line"></span></code></pre>
+<h2 id="how-to-use" class="text-2xl font-bold my-2"> How To Use </h2>
+<p> Execute the script or executable with two parameters: <code>branch_name</code> and <code>release_version</code>. While the <code>release_version</code> is intended for release identifiers, you can also input any other value as needed. for example, In this scenario, I aim to locate a specific version of IOMAD LMS. I will be searching for a commit that includes the keyword <code>4.1.3</code> in the <code>IOMAD_401_STABLE</code> branch. Once I identify the desired commit, this script will automatically check out to that selected commit. </p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e;overflow-x:auto" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1">gitcs</span><span style="color:#032F62"> IOMAD_401_STABLE</span><span style="color:#032F62"> &quot;4.1.3&quot;</span></span>
+<span class="line"></span></code></pre>
+<p> and here is the result on linux / Mac os x </p>
+<p> <div src="https://github.com/khairu-aqsara/git-cs/raw/main/case.jpg" alt="Result" class="flex flex-col gap-2 text-center"> <img class="w-full rounded-lg overflow-clip" src="https://github.com/khairu-aqsara/git-cs/raw/main/case.jpg?w=1024&q=70" alt="Result"> <span class="text-gray-400 font-normal text-sm">Result</span> </div> </p>
+<p> and here is the result on windows machine
+<div src="https://github.com/khairu-aqsara/git-cs/raw/main/result.png" alt="Result" class="flex flex-col gap-2 text-center"> <img class="w-full rounded-lg overflow-clip" src="https://github.com/khairu-aqsara/git-cs/raw/main/result.png?w=1024&q=70" alt="Result"> <span class="text-gray-400 font-normal text-sm">Result</span> </div> </p>
+<h1 id="compile-a-bash-script-into-standalone-executables-for-both-linux-and-windows" class="text-4xl font-bold my-2"> Compile a Bash script into standalone executables for both Linux and Windows </h1>
+<p> I’m not certain if this is necessary, but in case someone needs it, here are the steps. Below are instructions on how to compile a Python script into standalone executables for both Linux and Windows using <code>PyInstaller</code> and <code>auto-py-to-exe</code> </p>
+<h2 id="prerequisites-1" class="text-2xl font-bold my-2"> Prerequisites </h2>
+<ol class="list-decimal ml-6"> 
+<li class="mb-1"> <strong class="font-bold"> Python </strong> Ensure that Python is installed on your system. Python 3.x is recommended.
+Install Python from python.org if not already installed. </li>
+<li class="mb-1"> <strong class="font-bold"> PyInstaller </strong>: This tool converts Python applications into standalone executables for Linux.
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e;overflow-x:auto" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1">pip</span><span style="color:#032F62"> install</span><span style="color:#032F62"> pyinstaller</span><span style="color:#24292E">  </span></span>
+<span class="line"></span></code></pre>
+ </li>
+<li class="mb-1"> <strong class="font-bold"> auto-py-to-exe </strong>: This tool provides a graphical interface for converting Python scripts to standalone Windows executables.
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e;overflow-x:auto" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1">pip</span><span style="color:#032F62"> install</span><span style="color:#032F62"> auto-py-to-exe</span><span style="color:#24292E">  </span></span>
+<span class="line"></span></code></pre>
+ </li>
+ </ol>
+<h2 id="compilation-instructions" class="text-2xl font-bold my-2"> Compilation Instructions </h2>
+<h3 id="compiling-for-linux-using-pyinstaller" class="text-xl font-bold my-2"> Compiling for Linux Using PyInstaller </h3>
+<p> Navigate to the Script Directory: Open your terminal and navigate to the directory where your <code>gitcs.py</code> script is located. </p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e;overflow-x:auto" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1">pyinstaller</span><span style="color:#005CC5"> --clean</span><span style="color:#005CC5"> --onefile</span><span style="color:#032F62"> gitcs.py</span></span>
+<span class="line"></span></code></pre>
+<p> This will generate an executable named gitcs in the <code>dist</code> directory within your script’s directory.Next, you simply need to place the executable in the system path by using the following command. </p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e;overflow-x:auto" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1">sudo</span><span style="color:#032F62"> mv</span><span style="color:#032F62"> gitcs</span><span style="color:#032F62"> /usr/local/bin/gitcs</span></span>
+<span class="line"></span></code></pre>
+<h3 id="compiling-for-windows-using-auto-py-to-exe" class="text-xl font-bold my-2"> Compiling for Windows Using auto-py-to-exe </h3>
+<p> Run the following command to open the graphical interface for <code>auto-py-to-exe</code>. </p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e;overflow-x:auto" tabindex="0" data-language="cmd"><code><span class="line"><span style="color:#24292E">auto</span><span style="color:#D73A49">-</span><span style="color:#24292E">py</span><span style="color:#D73A49">-to-</span><span style="color:#24292E">exe</span></span>
+<span class="line"></span></code></pre>
+<p> <strong class="font-bold"> Configure auto-py-to-exe </strong> </p>
+<ul class="list-disc ml-6"> 
+<li class="mb-1"> Script Location: Select the git_release_finder.py script. </li>
+<li class="mb-1"> One File: Check the option to bundle everything into one executable. </li>
+<li class="mb-1"> Output Directory: Choose the directory where you want the executable to be saved. </li>
+<li class="mb-1"> Console Window/No Console Window: Choose whether you want a console window to appear when running the executable. </li>
+<li class="mb-1"> Additional Files: Add any additional files or folders your script requires. </li>
+ </ul>
+<p> Click the <code>&quot;Convert .py to .exe&quot;</code> button. This will convert your Python script into a Windows executable and place it in the specified output directory. The next step is to configure your ENV path. </p>
+<p> <div src="https://github.com/khairu-aqsara/git-cs/raw/main/pytoexe.png" alt="Result" class="flex flex-col gap-2 text-center"> <img class="w-full rounded-lg overflow-clip" src="https://github.com/khairu-aqsara/git-cs/raw/main/pytoexe.png?w=1024&q=70" alt="Result"> <span class="text-gray-400 font-normal text-sm">Result</span> </div> </p> </div>  </div> <footer class="bg-gradient-to-t from-orange-50"> <div class="flex flex-row items-center justify-center max-w-screen-md h-96 mx-auto px-4 sm:px-6"> <p class="text-4xl leading-[60px] bg-clip-text text-center text-transparent bg-gradient-to-r from-orange-600 to-amber-600 font-title font-black">  </p> </div> </footer> </div> </body></html> 
